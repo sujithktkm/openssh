@@ -24,7 +24,7 @@ end
 
 package node['openssh']['package_name'] unless node['openssh']['package_name'].empty?
 
-template '/etc/ssh/ssh_config' do
+template node['openssh']['server']['sshd_config_file'] do
   source 'ssh_config.erb'
   mode '0644'
   owner 'root'
@@ -76,7 +76,7 @@ if platform_family?('debian')
   directory dir
 end
 
-template '/etc/ssh/sshd_config' do
+template node['openssh']['server']['sshd_config_file'] do
   source 'sshd_config.erb'
   mode node['openssh']['config_mode']
   owner 'root'

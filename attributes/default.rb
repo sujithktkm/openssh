@@ -158,3 +158,4 @@ default['openssh']['server']['revoked_keys'] = '/etc/ssh/revoked_keys'
 default['openssh']['server']['subsystem'] = 'sftp /usr/libexec/openssh/sftp-server' if platform_family?('rhel', 'amazon', 'fedora')
 default['openssh']['server']['subsystem'] = 'sftp /usr/lib/openssh/sftp-server' if platform_family?('debian')
 default['openssh']['server']['match'] = {}
+default['openssh']['server']['sshd_config_file'] = '/etc/ssh/ssh_config'
